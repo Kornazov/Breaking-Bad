@@ -16,10 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.loadData()
-        
+
+        setupNavigationBar()
         setupSearchBar()
         setupTableView()
-        // Do any additional setup after loading the view.
+
     }
     
     private func setupSearchBar() {
@@ -31,6 +32,21 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         tableView.register(cellType: CharactersTableViewCell.self)
+    }
+    
+    private func setupNavigationBar() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 35))
+        let imageView = UIImageView(frame: CGRect(x: 4, y: 10, width: 16, height: 16))
+        
+        if let imgBackArrow = UIImage(named: "filter") {
+            imageView.image = imgBackArrow
+        }
+        view.addSubview(imageView)
+       // let backTap = UITapGestureRecognizer(target: self, action: #selector(nil))
+        //view.addGestureRecognizer(backTap)
+        let leftBarButtonItem = UIBarButtonItem(customView: view)
+        self.navigationController?.navigationBar.backgroundColor = .green
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
     }
 }
 
@@ -57,6 +73,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return characterCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let character = viewModel.filterCharacters?[indexPath.item]
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        secondViewController.character = character
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let verticalPadding: CGFloat = 20
         

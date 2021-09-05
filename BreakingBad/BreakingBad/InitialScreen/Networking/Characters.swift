@@ -10,6 +10,7 @@ struct CharactersResponse: Codable {
     var name: String?
     var occupation: [String]?
     var img: String?
+    var status: String?
     var nickname: String?
     var appearance: [Int]?
     var portrayed: String?
@@ -18,7 +19,7 @@ struct CharactersResponse: Codable {
 
     enum CodingKeys: String, CodingKey {
         case charID = "char_id"
-        case name, occupation, img, nickname, appearance, portrayed, category
+        case name, occupation, img, nickname, appearance, portrayed,status, category
     }
 }
 

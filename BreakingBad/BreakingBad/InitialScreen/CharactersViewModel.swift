@@ -15,7 +15,12 @@ protocol CharactersViewModelDelegate: AnyObject {
 class CharactersViewModel {
     
     weak var delegate: CharactersViewModelDelegate?
-    var characters: Characters?
+    var characters: Characters? {
+        didSet {
+            filterCharacters = characters
+        }
+    }
+    var filterCharacters: Characters?
     func loadData() {
         APIClient.shared.getCharacters { [weak self] result in
             switch result {
@@ -26,5 +31,21 @@ class CharactersViewModel {
                 print(error)
             }
         }
+    }
+    
+    func filterData(by string: String) {
+        filterCharacters = []
+        if string == "" {
+            filterCharacters = characters
+        } else {
+            characters?.forEach { character in
+                if let name = character.name {
+                    if name.lowercased().contains(string) {
+                        filterCharacters?.append(character)
+                    }
+                }
+            }
+        }
+        delegate?.reloadData()
     }
 }

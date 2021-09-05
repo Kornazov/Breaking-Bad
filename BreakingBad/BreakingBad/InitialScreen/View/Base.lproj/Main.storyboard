@@ -16,26 +16,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S6t-fT-3O2">
-                                <rect key="frame" x="16" y="44" width="382" height="818"/>
+                                <rect key="frame" x="16" y="95" width="382" height="767"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vzZ-rR-4yj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="S6t-fT-3O2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fnv-Oo-whc"/>
+                            <constraint firstItem="vzZ-rR-4yj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EgY-B0-AkM"/>
+                            <constraint firstItem="vzZ-rR-4yj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K52-Y5-vHj"/>
                             <constraint firstItem="S6t-fT-3O2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Khq-Jn-3Y5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S6t-fT-3O2" secondAttribute="bottom" id="Mbo-08-mEu"/>
+                            <constraint firstItem="S6t-fT-3O2" firstAttribute="top" secondItem="vzZ-rR-4yj" secondAttribute="bottom" id="bt4-9J-WYm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vzZ-rR-4yj" secondAttribute="trailing" id="iQp-yr-nYH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S6t-fT-3O2" secondAttribute="trailing" constant="16" id="sDe-xA-0Df"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="vzZ-rR-4yj" id="zuO-Zh-jWL"/>
                         <outlet property="tableView" destination="S6t-fT-3O2" id="UIT-6u-1w8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="45"/>
+            <point key="canvasLocation" x="95.652173913043484" y="44.866071428571423"/>
         </scene>
     </scenes>
 </document>

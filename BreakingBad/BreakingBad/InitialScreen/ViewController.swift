@@ -9,16 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     private var viewModel = CharactersViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.loadData()
+        
+        setupSearchBar()
         setupTableView()
         // Do any additional setup after loading the view.
     }
     
+    private func setupSearchBar() {
+        searchBar.delegate = self
+        searchBar.searchTextField.backgroundColor = .white
+    }
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -29,7 +36,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.characters?.count ?? 0
+        return viewModel.filterCharacters?.count ?? 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,7 +52,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let index = indexPath.item
-        let character = viewModel.characters?[index]
+        let character = viewModel.filterCharacters?[index]
         characterCell.configureUI(with: character)
         return characterCell
     }
@@ -65,5 +72,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: CharactersViewModelDelegate {
     func reloadData() {
         self.tableView.reloadData()
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterData(by: searchText.lowercased())
     }
 }

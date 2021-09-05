@@ -133,10 +133,10 @@
 		881EDE3526E53ABB006EBE59 /* BreakingBad */ = {
 			isa = PBXGroup;
 			children = (
-				881EDE8526E5621B006EBE59 /* Common */,
 				881EDE3626E53ABB006EBE59 /* AppDelegate.swift */,
 				881EDE3826E53ABB006EBE59 /* SceneDelegate.swift */,
 				881EDE7D26E55917006EBE59 /* InitialScreen */,
+				881EDE8526E5621B006EBE59 /* Common */,
 				881EDE6626E54F14006EBE59 /* Networking */,
 				881EDE3F26E53ABD006EBE59 /* Assets.xcassets */,
 				881EDE4126E53ABD006EBE59 /* LaunchScreen.storyboard */,

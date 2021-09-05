@@ -40,6 +40,6 @@ class BaseRequest: APIRequest {
     
     var method: HTTPMethod {
         //override in child class, if needed
-        return .post
+        return .get
     }
 }

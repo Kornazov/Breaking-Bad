@@ -15,7 +15,6 @@ extension URLRequest {
             return nil
         }
         self.init(url: finalUrl, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
-        
         self.httpMethod = apiRequest.method.rawValue
         self.allHTTPHeaderFields = apiRequest.httpHeaders
         

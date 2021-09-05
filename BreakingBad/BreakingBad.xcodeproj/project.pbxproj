@@ -27,6 +27,8 @@
 		881EDE7C26E5571F006EBE59 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE7B26E5571F006EBE59 /* Characters.swift */; };
 		881EDE8026E55966006EBE59 /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE7F26E55966006EBE59 /* CharactersRequest.swift */; };
 		881EDE8226E5599D006EBE59 /* CharactersOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8126E5599D006EBE59 /* CharactersOperation.swift */; };
+		881EDE8426E55AB8006EBE59 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8326E55AB8006EBE59 /* CharactersViewModel.swift */; };
+		881EDE8726E5622F006EBE59 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8626E5622F006EBE59 /* UITableView+Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		881EDE7B26E5571F006EBE59 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		881EDE7F26E55966006EBE59 /* CharactersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
 		881EDE8126E5599D006EBE59 /* CharactersOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersOperation.swift; sourceTree = "<group>"; };
+		881EDE8326E55AB8006EBE59 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		881EDE8626E5622F006EBE59 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +127,11 @@
 		881EDE3526E53ABB006EBE59 /* BreakingBad */ = {
 			isa = PBXGroup;
 			children = (
-				881EDE7D26E55917006EBE59 /* InitialScreen */,
-				881EDE6626E54F14006EBE59 /* Networking */,
+				881EDE8526E5621B006EBE59 /* Common */,
 				881EDE3626E53ABB006EBE59 /* AppDelegate.swift */,
 				881EDE3826E53ABB006EBE59 /* SceneDelegate.swift */,
-				881EDE3A26E53ABB006EBE59 /* ViewController.swift */,
-				881EDE3C26E53ABB006EBE59 /* Main.storyboard */,
+				881EDE7D26E55917006EBE59 /* InitialScreen */,
+				881EDE6626E54F14006EBE59 /* Networking */,
 				881EDE3F26E53ABD006EBE59 /* Assets.xcassets */,
 				881EDE4126E53ABD006EBE59 /* LaunchScreen.storyboard */,
 				881EDE4426E53ABD006EBE59 /* Info.plist */,
@@ -181,7 +184,10 @@
 		881EDE7D26E55917006EBE59 /* InitialScreen */ = {
 			isa = PBXGroup;
 			children = (
+				881EDE3C26E53ABB006EBE59 /* Main.storyboard */,
+				881EDE3A26E53ABB006EBE59 /* ViewController.swift */,
 				881EDE7E26E5593A006EBE59 /* Networking */,
+				881EDE8326E55AB8006EBE59 /* CharactersViewModel.swift */,
 			);
 			path = InitialScreen;
 			sourceTree = "<group>";
@@ -194,6 +200,14 @@
 				881EDE8126E5599D006EBE59 /* CharactersOperation.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		881EDE8526E5621B006EBE59 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				881EDE8626E5622F006EBE59 /* UITableView+Cell.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +346,11 @@
 				881EDE8226E5599D006EBE59 /* CharactersOperation.swift in Sources */,
 				881EDE8026E55966006EBE59 /* CharactersRequest.swift in Sources */,
 				881EDE3726E53ABB006EBE59 /* AppDelegate.swift in Sources */,
+				881EDE8426E55AB8006EBE59 /* CharactersViewModel.swift in Sources */,
 				881EDE7C26E5571F006EBE59 /* Characters.swift in Sources */,
 				881EDE7926E55429006EBE59 /* URLComponents+APIRequest.swift in Sources */,
 				881EDE6C26E550AB006EBE59 /* BaseRequest.swift in Sources */,
+				881EDE8726E5622F006EBE59 /* UITableView+Cell.swift in Sources */,
 				881EDE6E26E55124006EBE59 /* APIClient.swift in Sources */,
 				881EDE6826E54F33006EBE59 /* APIRequest.swift in Sources */,
 				881EDE7026E5520D006EBE59 /* AsyncOperation.swift in Sources */,

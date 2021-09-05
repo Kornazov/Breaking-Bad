@@ -10,7 +10,7 @@ import Foundation
 struct NetworkConfig {
     
     static var characters: String {
-        return "\(baseURL)characters"
+        return "characters"
     }
     
     static var baseURL: String {

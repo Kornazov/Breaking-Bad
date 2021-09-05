@@ -16,8 +16,16 @@ class APIClient {
         return queue
     }()
     
-    func add(operation: Operation) {
+    private func add(operation: Operation) {
         let queueToRun = concurrentQueue
         queueToRun.addOperation(operation)
+    }
+    
+    func getCharacters(completion: @escaping (Result<Characters?, Error>) -> ()) {
+        let operation = CharactersOperation()
+        operation.completion = { result in
+            completion(result)
+        }
+        add(operation: operation)
     }
 }

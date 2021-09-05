@@ -15,6 +15,15 @@
 		881EDE4326E53ABD006EBE59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881EDE4126E53ABD006EBE59 /* LaunchScreen.storyboard */; };
 		881EDE4E26E53ABD006EBE59 /* BreakingBadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE4D26E53ABD006EBE59 /* BreakingBadTests.swift */; };
 		881EDE5926E53ABE006EBE59 /* BreakingBadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE5826E53ABE006EBE59 /* BreakingBadUITests.swift */; };
+		881EDE6826E54F33006EBE59 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE6726E54F33006EBE59 /* APIRequest.swift */; };
+		881EDE6A26E54F5D006EBE59 /* Network Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE6926E54F5D006EBE59 /* Network Config.swift */; };
+		881EDE6C26E550AB006EBE59 /* Base Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE6B26E550AB006EBE59 /* Base Request.swift */; };
+		881EDE6E26E55124006EBE59 /* API Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE6D26E55124006EBE59 /* API Client.swift */; };
+		881EDE7026E5520D006EBE59 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE6F26E5520D006EBE59 /* AsyncOperation.swift */; };
+		881EDE7226E55237006EBE59 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE7126E55237006EBE59 /* NetworkOperation.swift */; };
+		881EDE7426E55252006EBE59 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE7326E55252006EBE59 /* NetworkService.swift */; };
+		881EDE7726E553F9006EBE59 /* URLRequest+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE7626E553F9006EBE59 /* URLRequest+Factory.swift */; };
+		881EDE7926E55429006EBE59 /* URLComponents+APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE7826E55429006EBE59 /* URLComponents+APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		881EDE5426E53ABE006EBE59 /* BreakingBadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		881EDE5826E53ABE006EBE59 /* BreakingBadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadUITests.swift; sourceTree = "<group>"; };
 		881EDE5A26E53ABE006EBE59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		881EDE6726E54F33006EBE59 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		881EDE6926E54F5D006EBE59 /* Network Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Config.swift"; sourceTree = "<group>"; };
+		881EDE6B26E550AB006EBE59 /* Base Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Base Request.swift"; sourceTree = "<group>"; };
+		881EDE6D26E55124006EBE59 /* API Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Client.swift"; sourceTree = "<group>"; };
+		881EDE6F26E5520D006EBE59 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		881EDE7126E55237006EBE59 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		881EDE7326E55252006EBE59 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		881EDE7626E553F9006EBE59 /* URLRequest+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Factory.swift"; sourceTree = "<group>"; };
+		881EDE7826E55429006EBE59 /* URLComponents+APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+APIRequest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,7 @@
 		881EDE3526E53ABB006EBE59 /* BreakingBad */ = {
 			isa = PBXGroup;
 			children = (
+				881EDE6626E54F14006EBE59 /* Networking */,
 				881EDE3626E53ABB006EBE59 /* AppDelegate.swift */,
 				881EDE3826E53ABB006EBE59 /* SceneDelegate.swift */,
 				881EDE3A26E53ABB006EBE59 /* ViewController.swift */,
@@ -126,6 +145,30 @@
 				881EDE5A26E53ABE006EBE59 /* Info.plist */,
 			);
 			path = BreakingBadUITests;
+			sourceTree = "<group>";
+		};
+		881EDE6626E54F14006EBE59 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				881EDE7526E553E8006EBE59 /* Factory */,
+				881EDE6726E54F33006EBE59 /* APIRequest.swift */,
+				881EDE6926E54F5D006EBE59 /* Network Config.swift */,
+				881EDE6B26E550AB006EBE59 /* Base Request.swift */,
+				881EDE6D26E55124006EBE59 /* API Client.swift */,
+				881EDE6F26E5520D006EBE59 /* AsyncOperation.swift */,
+				881EDE7126E55237006EBE59 /* NetworkOperation.swift */,
+				881EDE7326E55252006EBE59 /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		881EDE7526E553E8006EBE59 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				881EDE7626E553F9006EBE59 /* URLRequest+Factory.swift */,
+				881EDE7826E55429006EBE59 /* URLComponents+APIRequest.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +301,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881EDE7426E55252006EBE59 /* NetworkService.swift in Sources */,
+				881EDE6A26E54F5D006EBE59 /* Network Config.swift in Sources */,
 				881EDE3B26E53ABB006EBE59 /* ViewController.swift in Sources */,
 				881EDE3726E53ABB006EBE59 /* AppDelegate.swift in Sources */,
+				881EDE7926E55429006EBE59 /* URLComponents+APIRequest.swift in Sources */,
+				881EDE6C26E550AB006EBE59 /* Base Request.swift in Sources */,
+				881EDE6E26E55124006EBE59 /* API Client.swift in Sources */,
+				881EDE6826E54F33006EBE59 /* APIRequest.swift in Sources */,
+				881EDE7026E5520D006EBE59 /* AsyncOperation.swift in Sources */,
+				881EDE7226E55237006EBE59 /* NetworkOperation.swift in Sources */,
+				881EDE7726E553F9006EBE59 /* URLRequest+Factory.swift in Sources */,
 				881EDE3926E53ABB006EBE59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

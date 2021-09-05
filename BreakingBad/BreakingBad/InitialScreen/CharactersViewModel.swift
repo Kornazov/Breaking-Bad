@@ -8,14 +8,20 @@
 import Foundation
 import UIKit
 
+protocol CharactersViewModelDelegate: AnyObject {
+    func reloadData()
+}
+
 class CharactersViewModel {
     
+    weak var delegate: CharactersViewModelDelegate?
     var characters: Characters?
     func loadData() {
         APIClient.shared.getCharacters { [weak self] result in
             switch result {
             case .success(let response):
                 self?.characters = response
+                self?.delegate?.reloadData()
             case .failure(let error):
                 print(error)
             }

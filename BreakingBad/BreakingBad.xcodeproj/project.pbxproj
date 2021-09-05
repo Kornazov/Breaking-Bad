@@ -29,6 +29,9 @@
 		881EDE8226E5599D006EBE59 /* CharactersOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8126E5599D006EBE59 /* CharactersOperation.swift */; };
 		881EDE8426E55AB8006EBE59 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8326E55AB8006EBE59 /* CharactersViewModel.swift */; };
 		881EDE8726E5622F006EBE59 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8626E5622F006EBE59 /* UITableView+Cell.swift */; };
+		881EDE8B26E56336006EBE59 /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8926E56336006EBE59 /* CharactersTableViewCell.swift */; };
+		881EDE8C26E56336006EBE59 /* CharactersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881EDE8A26E56336006EBE59 /* CharactersTableViewCell.xib */; };
+		881EDE8E26E564A9006EBE59 /* UIImage+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8D26E564A9006EBE59 /* UIImage+LoadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		881EDE8126E5599D006EBE59 /* CharactersOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersOperation.swift; sourceTree = "<group>"; };
 		881EDE8326E55AB8006EBE59 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		881EDE8626E5622F006EBE59 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
+		881EDE8926E56336006EBE59 /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		881EDE8A26E56336006EBE59 /* CharactersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableViewCell.xib; sourceTree = "<group>"; };
+		881EDE8D26E564A9006EBE59 /* UIImage+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LoadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +190,7 @@
 		881EDE7D26E55917006EBE59 /* InitialScreen */ = {
 			isa = PBXGroup;
 			children = (
-				881EDE3C26E53ABB006EBE59 /* Main.storyboard */,
+				881EDE8826E56312006EBE59 /* View */,
 				881EDE3A26E53ABB006EBE59 /* ViewController.swift */,
 				881EDE7E26E5593A006EBE59 /* Networking */,
 				881EDE8326E55AB8006EBE59 /* CharactersViewModel.swift */,
@@ -206,8 +212,19 @@
 			isa = PBXGroup;
 			children = (
 				881EDE8626E5622F006EBE59 /* UITableView+Cell.swift */,
+				881EDE8D26E564A9006EBE59 /* UIImage+LoadImage.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		881EDE8826E56312006EBE59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				881EDE3C26E53ABB006EBE59 /* Main.storyboard */,
+				881EDE8926E56336006EBE59 /* CharactersTableViewCell.swift */,
+				881EDE8A26E56336006EBE59 /* CharactersTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +333,7 @@
 				881EDE4326E53ABD006EBE59 /* LaunchScreen.storyboard in Resources */,
 				881EDE4026E53ABD006EBE59 /* Assets.xcassets in Resources */,
 				881EDE3E26E53ABB006EBE59 /* Main.storyboard in Resources */,
+				881EDE8C26E56336006EBE59 /* CharactersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +361,7 @@
 				881EDE7426E55252006EBE59 /* NetworkService.swift in Sources */,
 				881EDE6A26E54F5D006EBE59 /* NetworkConfig.swift in Sources */,
 				881EDE3B26E53ABB006EBE59 /* ViewController.swift in Sources */,
+				881EDE8B26E56336006EBE59 /* CharactersTableViewCell.swift in Sources */,
 				881EDE8226E5599D006EBE59 /* CharactersOperation.swift in Sources */,
 				881EDE8026E55966006EBE59 /* CharactersRequest.swift in Sources */,
 				881EDE3726E53ABB006EBE59 /* AppDelegate.swift in Sources */,
@@ -350,6 +369,7 @@
 				881EDE7C26E5571F006EBE59 /* Characters.swift in Sources */,
 				881EDE7926E55429006EBE59 /* URLComponents+APIRequest.swift in Sources */,
 				881EDE6C26E550AB006EBE59 /* BaseRequest.swift in Sources */,
+				881EDE8E26E564A9006EBE59 /* UIImage+LoadImage.swift in Sources */,
 				881EDE8726E5622F006EBE59 /* UITableView+Cell.swift in Sources */,
 				881EDE6E26E55124006EBE59 /* APIClient.swift in Sources */,
 				881EDE6826E54F33006EBE59 /* APIRequest.swift in Sources */,

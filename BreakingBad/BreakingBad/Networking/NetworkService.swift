@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum NetworkServiceError: Error, LocalizedError {
     case badUrl
     case badResponse

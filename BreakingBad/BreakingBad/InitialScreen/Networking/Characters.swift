@@ -6,6 +6,7 @@
 //
 
 struct CharactersResponse: Codable {
+    
     var charID: Int?
     var name: String?
     var occupation: [String]?
@@ -15,7 +16,6 @@ struct CharactersResponse: Codable {
     var appearance: [Int]?
     var portrayed: String?
     var category: String?
-
 
     enum CodingKeys: String, CodingKey {
         case charID = "char_id"

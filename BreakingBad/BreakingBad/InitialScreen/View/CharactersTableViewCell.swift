@@ -11,6 +11,7 @@ class CharactersTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var characterImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()

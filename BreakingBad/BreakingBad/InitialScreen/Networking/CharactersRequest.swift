@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class CharactersRequest: BaseRequest {
     
     override var endpoint: String? {

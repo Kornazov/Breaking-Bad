@@ -10,12 +10,12 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet weak var occupationLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var seasonAppearancesLabel: UILabel!
-    
+    @IBOutlet private weak var occupationLabel: UILabel!
+    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet private weak var nicknameLabel: UILabel!
+    @IBOutlet private weak var seasonAppearancesLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
+    
     @IBAction private func didTapCloseButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -50,6 +50,7 @@ class DetailsViewController: UIViewController {
     @objc func backToMain() {
         self.navigationController?.popViewController(animated: true)
     }
+    
     private func setupUI() {
         guard let character = character else {
             return

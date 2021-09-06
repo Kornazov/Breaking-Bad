@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class CharactersOperation: NetworkOperation<Characters> {
     var request: CharactersRequest
     

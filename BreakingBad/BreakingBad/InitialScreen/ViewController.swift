@@ -8,9 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
+    
+    private var toolBar = UIToolbar()
+    private var myPickerView  = UIPickerView()
     private var viewModel = CharactersViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +23,42 @@ class ViewController: UIViewController {
         setupNavigationBar()
         setupSearchBar()
         setupTableView()
+    }
+    
+    @objc func pickUp() {
+        hidePicker()
+        // UIPickerView
+        self.myPickerView = UIPickerView(frame: CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 150, width: UIScreen.main.bounds.size.width, height: 150))
+        self.myPickerView.delegate = self
+        self.myPickerView.dataSource = self
+        self.myPickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.9)
+        self.view.addSubview(myPickerView)
+
+
+        // ToolBar
+        toolBar = UIToolbar(frame: CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 150, width: UIScreen.main.bounds.size.width, height: 30))
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.sizeToFit()
+
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(hidePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let allCharactersButton = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(showAllCharacters))
+        toolBar.setItems([allCharactersButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        self.view.addSubview(toolBar)
 
     }
     
+    @objc func showAllCharacters() {
+        viewModel.showAllCharacters()
+        hidePicker()
+    }
+    @objc func hidePicker() {
+        toolBar.removeFromSuperview()
+        myPickerView.removeFromSuperview()
+    }
     private func setupSearchBar() {
         searchBar.delegate = self
         searchBar.searchTextField.backgroundColor = .white
@@ -42,11 +78,12 @@ class ViewController: UIViewController {
             imageView.image = imgBackArrow
         }
         view.addSubview(imageView)
-       // let backTap = UITapGestureRecognizer(target: self, action: #selector(nil))
-        //view.addGestureRecognizer(backTap)
+        let backTap = UITapGestureRecognizer(target: self, action: #selector(pickUp))
+        view.addGestureRecognizer(backTap)
         let leftBarButtonItem = UIBarButtonItem(customView: view)
+        
         self.navigationController?.navigationBar.backgroundColor = .green
-        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        self.navigationItem.rightBarButtonItem = leftBarButtonItem
     }
 }
 
@@ -99,6 +136,30 @@ extension ViewController: CharactersViewModelDelegate {
 
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.filterData(by: searchText.lowercased())
+        if searchText == "" {
+            viewModel.searchString = nil
+            return
+        }
+        
+        viewModel.searchString = searchText.lowercased()
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.seasons.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel.seasons[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.filterForSeason = row + 1
     }
 }

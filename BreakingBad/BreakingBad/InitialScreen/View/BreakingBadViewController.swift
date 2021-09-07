@@ -84,7 +84,7 @@ private extension BreakingBadViewController {
         view.addGestureRecognizer(backTap)
         let leftBarButtonItem = UIBarButtonItem(customView: view)
         
-        self.navigationController?.navigationBar.backgroundColor = .green
+        self.navigationController?.navigationBar.backgroundColor = .orange
         self.navigationItem.rightBarButtonItem = leftBarButtonItem
     }
 }
@@ -114,7 +114,9 @@ extension BreakingBadViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let character = viewModel.filterCharacters?[indexPath.item]
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        guard let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController else {
+            return
+        }
         secondViewController.character = character
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
@@ -133,6 +135,10 @@ extension BreakingBadViewController: UITableViewDelegate, UITableViewDataSource 
 extension BreakingBadViewController: CharactersViewModelDelegate {
     func reloadData() {
         self.tableView.reloadData()
+        Indicator.shared.showIndicator()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            Indicator.shared.hideIndicator()
+        }
     }
 }
 

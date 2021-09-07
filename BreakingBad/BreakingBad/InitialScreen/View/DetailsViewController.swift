@@ -39,7 +39,7 @@ class DetailsViewController: UIViewController {
         let backTap = UITapGestureRecognizer(target: self, action: #selector(backToMain))
         view.addGestureRecognizer(backTap)
         let leftBarButtonItem = UIBarButtonItem(customView: view)
-        self.navigationController?.navigationBar.backgroundColor = .green
+        self.navigationController?.navigationBar.backgroundColor = .orange
         
         let label = UILabel()
         label.text = character?.name
@@ -56,14 +56,18 @@ class DetailsViewController: UIViewController {
             return
         }
         
-        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.layer.cornerRadius = imageView.frame.height / 2
         imageView.clipsToBounds = true
         imageView.downloaded(from: character.img ?? "")
+        
         let occupation = character.occupation?.joined(separator: ",")
+        let seasons = character.appearance?.map { String($0) }.joined(separator: ",")
+        
+        
         
         occupationLabel.text = "Occupation: " + (occupation ?? "")
         statusLabel.text = "Status: " + (character.status ?? "")
         nicknameLabel.text = "Nickname: " + (character.nickname ?? "")
-        
+        seasonAppearancesLabel.text = "Seasons: " + (seasons ?? "")
     }
 }

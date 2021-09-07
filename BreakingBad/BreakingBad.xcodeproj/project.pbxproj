@@ -32,6 +32,7 @@
 		881EDE8E26E564A9006EBE59 /* UIImage+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE8D26E564A9006EBE59 /* UIImage+LoadImage.swift */; };
 		881EDE9226E5784F006EBE59 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDE9126E5784F006EBE59 /* DetailsViewController.swift */; };
 		881EDEBA26E6B4B0006EBE59 /* BreakingBadUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881EDEB926E6B4B0006EBE59 /* BreakingBadUnitTests.swift */; };
+		8839521926E7399A0091C504 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839521826E7399A0091C504 /* LoadingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		881EDEB726E6B4B0006EBE59 /* BreakingBadUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBadUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		881EDEB926E6B4B0006EBE59 /* BreakingBadUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadUnitTests.swift; sourceTree = "<group>"; };
 		881EDEBB26E6B4B0006EBE59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8839521826E7399A0091C504 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				881EDE8626E5622F006EBE59 /* UITableView+Cell.swift */,
 				881EDE8D26E564A9006EBE59 /* UIImage+LoadImage.swift */,
+				8839521826E7399A0091C504 /* LoadingIndicator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				881EDE7426E55252006EBE59 /* NetworkService.swift in Sources */,
 				881EDE6A26E54F5D006EBE59 /* NetworkConfig.swift in Sources */,
 				881EDE3B26E53ABB006EBE59 /* BreakingBadViewController.swift in Sources */,
+				8839521926E7399A0091C504 /* LoadingIndicator.swift in Sources */,
 				881EDE8B26E56336006EBE59 /* CharactersTableViewCell.swift in Sources */,
 				881EDE8226E5599D006EBE59 /* CharactersOperation.swift in Sources */,
 				881EDE8026E55966006EBE59 /* CharactersRequest.swift in Sources */,
